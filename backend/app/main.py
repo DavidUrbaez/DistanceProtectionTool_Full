@@ -1,27 +1,34 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 
-# Create the FastAPI application
-app = FastAPI()
+app = FastAPI(
+    title="Your API",
+    description="Your API Description",
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
+)
 
-# Add CORS middleware to allow cross-origin requests
+# CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
-# Root endpoint
 @app.get("/")
-def read_root():
+async def read_root():
     return {"message": "Hello World from FastAPI on Vercel!"}
 
 
-# Your existing routes can be kept here
-# For example:
 @app.get("/api/some-route")
-def some_route():
+async def some_route():
     return {"message": "Some route"}
+
+
+# Handler for Vercel serverless
+handler = Mangum(app, lifespan="off")
