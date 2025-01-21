@@ -1,7 +1,6 @@
-from app.main import handler
-from http.server import BaseHTTPRequestHandler
+from app.main import handler as app_handler
 
 
 # Vercel serverless function handler
-def endpoint(request):
-    return handler(request)
+def handler(request):
+    return app_handler(request)
