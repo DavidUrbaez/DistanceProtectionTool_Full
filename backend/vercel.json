@@ -1,4 +1,5 @@
 {
+    "root": "backend", // Replace with your backend directory name
     "version": 2,
     "builds": [
         {
