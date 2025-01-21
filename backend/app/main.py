@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Configure CORS
+# Configure CORS2
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://davidurbaez.github.io", "http://localhost:5173"],
