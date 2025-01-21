@@ -14,5 +14,10 @@ app.add_middleware(
 
 
 @app.get("/")
-async def root():
-    return {"message": "Hello from FastAPI!"}
+def read_root():
+    return {"message": "Hello World from FastAPI on Vercel!"}
+
+
+@app.get("/api/hello")
+def hello_api():
+    return {"message": "Hello from API route!"}

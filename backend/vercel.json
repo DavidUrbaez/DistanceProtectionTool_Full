@@ -1,16 +1,14 @@
 {
-    "root": "backend", // Replace with your backend directory name
-    "version": 2,
     "builds": [
         {
-            "src": "app/main.py",
+            "src": "backend/app/main.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "app/main.py"
+            "dest": "backend/app/main.py"
         }
     ]
 }
