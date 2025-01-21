@@ -22,6 +22,6 @@ def read_root():
 
 # Your existing routes can be kept here
 # For example:
-# @app.get("/api/some-route")
-# def some_route():
-#     return {"message": "Some route"}
+@app.get("/api/some-route")
+def some_route():
+    return {"message": "Some route"}
