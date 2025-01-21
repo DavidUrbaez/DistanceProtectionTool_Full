@@ -1,0 +1,26 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/logs
+frontend/*.log
+frontend/.vite
+
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/.env
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/.vercel/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
